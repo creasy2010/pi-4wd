@@ -1,0 +1,45 @@
+.banner {
+  height: 232px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .back {
+    width: 100%;
+    height: 100%;
+  }
+  .mask-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
+  .main {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 128px;
+      height: 128px;
+    }
+    .info {
+      text-align: left;
+      margin-left: 24px;
+      .title {
+        font-size: 36px;
+        color: #fff;
+      }
+      .location {
+        font-size: 24px;
+        color: #fff;
+        margin-top: 10px;
+      }
+    }
+  }
+}

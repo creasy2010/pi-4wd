@@ -1,0 +1,71 @@
+/* 小程序全局设置border-box */
+view,scroll-view,swiper,swiper-item,movable-area,movable-view,cover-view,cover-image,icon,text,rich-text,progress,button,checkbox-group,checkbox,form,input,label,picker,picker-view,radio-group,radio,slider,switch,textarea,navigator,functional-page-navigator,image,video,camera,live-player,live-pusher,map,canvas,open-data,web-view,ad{
+  box-sizing: border-box;
+}
+view,
+text {
+  font-size: 32px;
+  color: #333333;
+}
+.option__text{ //侧滑按钮的文字颜色
+  color: #fff;
+}
+.btn {
+  text-align: center;
+  height: 56px;
+  line-height: 56px;
+  background: linear-gradient(
+    90deg,
+    rgba(254, 154, 41, 1) 0%,
+    rgba(254, 90, 20, 1) 100%
+  );
+  border-radius: 28px;
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.btn-normal{
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 24px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1;
+  background: linear-gradient(90deg,rgba(254,154,41,1) 0%,rgba(254,90,20,1) 100%);
+  margin-left: 16px;
+  &.btn-grey{
+    background: #f5f5f5;
+    color: #333;
+  }
+  &.btn-ghost{
+    background: transparent;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+  }
+}
+
+
+page {
+  background-color: #f5f5f5;
+  height: 100%;
+}
+.white-back{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+.yellow {
+  color: #ff6600;
+}
+.grey {
+  color: #b3b3b3;
+}  
+.at-modal__content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}

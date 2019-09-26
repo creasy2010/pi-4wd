@@ -1,0 +1,70 @@
+{
+  "type": "taro-redux",
+  "api": {
+    "swaggerUrl": "http://172.19.4.28:8690/v2/api-docs",
+    "dir": "./src/webapi",
+    "mock": {
+      "mockApi": {
+        "CouponInfoController": [],
+        "CouponCodeBaseController": [],
+        "PetCouponInfoController": [],
+        "AuthorizeController": [],
+        "CustomerBaseController": [],
+        "StoreCustomerController": [],
+        "PetTimingCardController": [],
+        "TimingCardCodeController": [],
+        "PetRechargeableCardController": [],
+        "RechargeableCardCodeController": [],
+        "StoreBaseController": [],
+        "GoodsBaseController": [],
+        "ProjectCateController": [],
+        "PetOrderController": [],
+        "PetPayController": [],
+        "PayController": [],
+        "StoreCateBaseController": [],
+        "ProjectController": [],
+        "GoodsFollowBaseController": [],
+        "AppointmentController": [],
+        "CustomerDeliveryAddressBaseController": [],
+        "LocalDeliveryBaseController": [],
+        "TradeBaseController": [],
+        "ResourceBaseController": []
+      },
+      "ignoreApi": {
+        "QQServiceController": [""],
+        "CouponInfoController": [],
+        "PurchaseBaseController": [],
+        "GoodsInfoBaseController": []
+      }
+    },
+    "include": [
+      "StoreCustomerController",
+      "AuthorizeController",
+      "GoodsFollowBaseController",
+      "CouponInfoController",
+      "PetCouponInfoController",
+      "CustomerBaseController",
+      "PetTimingCardController",
+      "TimingCardCodeController",
+      "PetRechargeableCardController",
+      "RechargeableCardCodeController",
+      "StoreBaseController",
+      "GoodsBaseController",
+      "ProjectCateController",
+      "PetOrderController",
+      "PetPayController",
+      "PayController",
+      "StoreCateBaseController",
+      "ProjectController",
+      "AppointmentController",
+      "PurchaseBaseController",
+      "LocalDeliveryBaseController",
+      "CustomerPetController",
+      "LocalDeliveryBaseController",
+      "TradeBaseController",
+      "ResourceBaseController",
+      "CouponCodeBaseController"
+    ],
+    "exclude": ["TradeSettingController"]
+  }
+}

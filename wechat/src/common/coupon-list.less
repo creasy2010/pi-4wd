@@ -1,0 +1,73 @@
+.list-wrapper {
+  padding: 16px 24px;
+
+  .list {
+    height: 300px
+  }
+  .item {
+    overflow-x: scroll;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 24px;
+    height: 208px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+
+    .left {
+      flex-basis: 176px;
+      height: 100%;
+      border-left: 4px solid #ff6600;
+      text-align: center;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      .will-overdue {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 72px;
+        height: 72px;
+      }
+
+      .price-wrap {
+        color: #ff6600;
+
+        .price {
+          color: #ff6600;
+          font-size: 48px;
+        }
+      }
+
+      .condition {
+        margin-top: 12px;
+        font-size: 24px;
+      }
+    }
+
+    .info {
+      flex: 1;
+
+      .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .category,
+      .time {
+        font-size: 24px;
+        color: #a3a3a3;
+        margin-top: 5px;
+      }
+
+      .category {
+        margin-top: 15px;
+      }
+    }
+  }
+}

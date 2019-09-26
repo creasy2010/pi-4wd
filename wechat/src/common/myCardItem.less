@@ -1,0 +1,77 @@
+.myCardItem {
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background: linear-gradient(
+    270deg,
+    rgba(155, 132, 245, 1) 0%,
+    rgba(111, 91, 239, 1) 100%
+  );
+  view {
+    color: #fff;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+
+    .head {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      .head-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .info {
+    color: #fff;
+    margin-left: 16px;
+    .phone {
+      margin-top: 14px;
+      font-size: 24px;
+      opacity: 0.5;
+    }
+  }
+  .title {
+    font-size: 36px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .end-time {
+    font-size: 24px;
+    .will-end {
+      padding-left: 16px;
+      color: #ffc299;
+      font-size: 24px;
+    }
+  }
+  .code {
+    margin-top: 32px;
+    font-size: 28px;
+  }
+}
+.overdue {
+  .myCardItem {
+    background: #ffffff;
+    .head {
+      filter: grayscale(100%);
+    }
+    view {
+      color: #a3a3a3;
+    }
+    text {
+      color: #a3a3a3;
+    }
+    .overdue {
+      color: #ffc299;
+    }
+    .balance {
+      .price {
+        color: #a3a3a3;
+      }
+    }
+  }
+}

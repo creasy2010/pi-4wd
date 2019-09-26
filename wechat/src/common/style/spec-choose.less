@@ -1,0 +1,39 @@
+.goodsSpec {
+  margin-bottom: 32px;
+  .spec-title {
+    font-size: 28px;
+    line-height: 1;
+    display: block;
+  }
+  .goodsSpecItems {
+    .specItem {
+      padding: 16px 32px;
+      border: 1px solid #f5f5f5;
+      border-radius: 8px;
+      margin-right: 16px;
+      background-color: #f5f5f5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      .spec-text {
+        color: #333;
+        font-size: 24px;
+      }
+      &.active {
+        background-color: #fff;
+        border-color: #ff6600;
+        .spec-text {
+          color: #ff6600;
+        }
+      }
+      &.disable {
+        background-color: #f5f5f5;
+        border-color: #f5f5f5;
+        .spec-text {
+          color: #B3B3B3;
+        }
+      }
+    }
+  }
+}

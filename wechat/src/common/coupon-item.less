@@ -1,0 +1,74 @@
+.item {
+  width: 510px;
+  background-color: #fff;
+  height: 208px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+
+  .left {
+    width: 176px;
+    height: 100%;
+    border-left: 4px solid #ff6600;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    .will-overdue {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 72px;
+      height: 72px;
+    }
+
+    .price-wrap {
+      color: #ff6600;
+      .price {
+        color: #ff6600;
+        font-size: 48px;
+      }
+    }
+    .condition {
+      margin-top: 12px;
+      font-size: 24px;
+    }
+  }
+  .info {
+    width: 334px;
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .category,
+    .time {
+      font-size: 24px;
+      color: #a3a3a3;
+      margin-top: 5px;
+    }
+    .category {
+      margin-top: 15px;
+    }
+  }
+}
+.overdue {
+  .item {
+    background: #ffffff;
+    .head {
+      filter: grayscale(100%);
+    }
+    view {
+      color: #a3a3a3;
+    }
+    text {
+      color: #a3a3a3;
+    }
+    .overdue {
+      color: #ffc299;
+    }
+  }
+}
