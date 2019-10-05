@@ -93,7 +93,7 @@ class FourWheelDriveCar():
         self.reset()
 
         self.lfMotor.forward()
-        self.lfPwa.pulse(n=5)
+        self.lfPwa.pulse()
 
         self.rfMotor.forward()
         self.rfPwa.pulse()
