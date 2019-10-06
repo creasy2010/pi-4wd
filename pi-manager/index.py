@@ -91,17 +91,16 @@ class FourWheelDriveCar():
         :return:
         '''
         self.reset()
-
+        #
         self.lfMotor.forward()
         self.lfPwa.pulse()
 
         self.rfMotor.forward()
         self.rfPwa.pulse()
 
-        # self.lbMotor.forward()
         self.lbMotor.forward()
         self.lbPwa.pulse()
-
+        #
         self.rbMotor.forward()
         self.rbPwa.pulse()
 
