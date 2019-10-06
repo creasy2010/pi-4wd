@@ -11,8 +11,12 @@ sudo pigpiod
  本地运行
   PIGPIO_ADDR=172.19.8.53 python3 index.py
   PIGPIO_ADDR=192.168.0.112 python3 index.py
+
+  other:
+pwa 相关资料:
+  https://gpiozero.readthedocs.io/en/stable/api_output.html#pwmoutputdevice
 '''
-from gpiozero import Motor, LED, PWMLED
+from gpiozero import Motor, LED, PWMLED,PWMOutputDevice
 from time import sleep
 import configparser
 
@@ -45,15 +49,15 @@ class FourWheelDriveCar():
 
         self.lfMotor = Motor(config.getint("car", "LEFT_FRONT_1"), config.getint("car", "LEFT_FRONT_2"), pin_factory=factory)
         self.rfMotor = Motor(config.getint("car", "RIGHT_FRONT_1"), config.getint("car", "RIGHT_FRONT_2"), pin_factory=factory)
-        self.rfPwa = PWMLED(config.getint("car", "RIGHT_FRONT__PWA"), pin_factory=factory)
-        self.lfPwa = PWMLED(config.getint("car", "LEFT_FRONT__PWA"), pin_factory=factory)
+        self.rfPwa = PWMOutputDevice(config.getint("car", "RIGHT_FRONT__PWA"), frequency=50, pin_factory=factory)
+        self.lfPwa = PWMOutputDevice(config.getint("car", "LEFT_FRONT__PWA"), frequency=50, pin_factory=factory)
         self.forwardFire = LED(config.getint("car", "FORWARD_STBY"), pin_factory=factory)
 
 
         self.lbMotor = Motor(config.getint("car", "LEFT_BEHIND_1"), config.getint("car", "LEFT_BEHIND_2"), pin_factory=factory)
         self.rbMotor = Motor(config.getint("car", "RIGHT_BEHIND_1"), config.getint("car", "RIGHT_BEHIND_2"), pin_factory=factory)
-        self.rbPwa = PWMLED(config.getint("car", "RIGHT_BEHIND__PWA"), pin_factory=factory)
-        self.lbPwa = PWMLED(config.getint("car", "LEFT_BEHIND__PWA"), pin_factory=factory)
+        self.rbPwa = PWMOutputDevice(config.getint("car", "RIGHT_BEHIND__PWA"), frequency=50,  pin_factory=factory)
+        self.lbPwa = PWMOutputDevice(config.getint("car", "LEFT_BEHIND__PWA"), frequency=50, pin_factory=factory)
         self.behindFire = LED(config.getint("car", "BEHIND_STBY"), pin_factory=factory)
 
         self.fire_on()
@@ -61,6 +65,11 @@ class FourWheelDriveCar():
     def fire_on(self):
         self.forwardFire.on()
         self.behindFire.on()
+
+        self.lfPwa.on()
+        self.rfPwa.on()
+        self.lbPwa.on()
+        self.rbPwa.on()
 
     def fire_off(self):
         self.lfPwa.off()
