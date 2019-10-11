@@ -16,12 +16,16 @@ sudo pigpiod
 pwa 相关资料:
   https://gpiozero.readthedocs.io/en/stable/api_output.html#pwmoutputdevice
 '''
-from gpiozero import Motor, LED, PWMLED,PWMOutputDevice
+from gpiozero import Device,Motor, LED, PWMLED,PWMOutputDevice
 from time import sleep
+from gpiozero.pins.mock import MockFactory
 import configparser
 
 from gpiozero.pins.pigpio import PiGPIOFactory
 factory = PiGPIOFactory(host='192.168.0.112', port=8888)
+
+
+Device.pin_factory = MockFactory()
 
 #
 # red = LED(17, factory)
@@ -47,8 +51,8 @@ class FourWheelDriveCar():
         config = configparser.ConfigParser()
         config.read("config.ini")
 
-        freFrequency = 50
-        backFrequency = 50
+        freFrequency = 30
+        backFrequency = 30
 
         self.lfMotor = Motor(config.getint("car", "LEFT_FRONT_1"), config.getint("car", "LEFT_FRONT_2"), pin_factory=factory)
         self.rfMotor = Motor(config.getint("car", "RIGHT_FRONT_1"), config.getint("car", "RIGHT_FRONT_2"), pin_factory=factory)
