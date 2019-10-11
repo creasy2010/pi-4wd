@@ -47,17 +47,20 @@ class FourWheelDriveCar():
         config = configparser.ConfigParser()
         config.read("config.ini")
 
+        freFrequency = 50
+        backFrequency = 50
+
         self.lfMotor = Motor(config.getint("car", "LEFT_FRONT_1"), config.getint("car", "LEFT_FRONT_2"), pin_factory=factory)
         self.rfMotor = Motor(config.getint("car", "RIGHT_FRONT_1"), config.getint("car", "RIGHT_FRONT_2"), pin_factory=factory)
-        self.rfPwa = PWMOutputDevice(config.getint("car", "RIGHT_FRONT__PWA"), frequency=50, pin_factory=factory)
-        self.lfPwa = PWMOutputDevice(config.getint("car", "LEFT_FRONT__PWA"), frequency=50, pin_factory=factory)
+        self.rfPwa = PWMOutputDevice(config.getint("car", "RIGHT_FRONT__PWA"), frequency=freFrequency, pin_factory=factory)
+        self.lfPwa = PWMOutputDevice(config.getint("car", "LEFT_FRONT__PWA"), frequency=freFrequency, pin_factory=factory)
         self.forwardFire = LED(config.getint("car", "FORWARD_STBY"), pin_factory=factory)
 
 
         self.lbMotor = Motor(config.getint("car", "LEFT_BEHIND_1"), config.getint("car", "LEFT_BEHIND_2"), pin_factory=factory)
         self.rbMotor = Motor(config.getint("car", "RIGHT_BEHIND_1"), config.getint("car", "RIGHT_BEHIND_2"), pin_factory=factory)
-        self.rbPwa = PWMOutputDevice(config.getint("car", "RIGHT_BEHIND__PWA"), frequency=50,  pin_factory=factory)
-        self.lbPwa = PWMOutputDevice(config.getint("car", "LEFT_BEHIND__PWA"), frequency=50, pin_factory=factory)
+        self.rbPwa = PWMOutputDevice(config.getint("car", "RIGHT_BEHIND__PWA"), frequency=backFrequency,  pin_factory=factory)
+        self.lbPwa = PWMOutputDevice(config.getint("car", "LEFT_BEHIND__PWA"), frequency=backFrequency, pin_factory=factory)
         self.behindFire = LED(config.getint("car", "BEHIND_STBY"), pin_factory=factory)
 
         self.fire_on()
